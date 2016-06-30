@@ -44,3 +44,9 @@ authorization_data = AuthorizationData(
           </AccountIds>
         </Scope>
 
+
+"""next - rename columns & add medium & source
+
+"""next - upload it to Google Analytics
+
+
