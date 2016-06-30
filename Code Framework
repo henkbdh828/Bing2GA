@@ -1,0 +1,46 @@
+""" Define User ID Variables & API keys
+
+"""Google analytics variables
+# accountId='BH TO INPUT',
+# webPropertyId='BH TO INPUT',
+# customDataSourceId='BH TO INPUT',
+
+
+"""Bing API variables
+authorization_data = AuthorizationData(
+    authentication = <AuthenticationGoesHere>,
+    customer_id = <CustomerIdGoesHere>,
+    account_id = <AccountIdGoesHere>,
+    developer_token = '<DeveloperTokenGoesHere>'
+)
+
+
+"""First of all - authorize/connect to Bing Ads API
+
+<s:Envelope xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header xmlns="https://bingads.microsoft.com/Reporting/v9">
+    <Action mustUnderstand="1">SubmitGenerateReport</Action>
+    <ApplicationToken i:nil="false"></ApplicationToken>
+    <AuthenticationToken i:nil="false"></AuthenticationToken>
+    <CustomerAccountId i:nil="false"></CustomerAccountId>
+    <CustomerId i:nil="false"></CustomerId>
+    <DeveloperToken i:nil="false"></DeveloperToken>
+    <Password i:nil="false"></Password>
+    <UserName i:nil="false"></UserName>
+  </s:Header>
+
+""" Next - get the report and save it as CSV
+
+   <!--Keep these fields if you set the i:type attribute to KeywordPerformanceReportRequest-->
+        <Aggregation>"Daily"</Aggregation>
+        <Columns i:nil="false">
+          <KeywordPerformanceReportColumn>"TimePeriod","Clicks","Spend","campaignName","adGroupName","Keyword"</KeywordPerformanceReportColumn>
+        </Columns>
+        
+        
+        <Scope i:nil="false">
+          <AccountIds i:nil="false" xmlns:a1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+            <a1:long></a1:long>
+          </AccountIds>
+        </Scope>
+
